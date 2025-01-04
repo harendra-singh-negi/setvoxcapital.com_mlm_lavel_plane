@@ -1,0 +1,150 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* Supports Tickets
+/*----------------------------------------*/
+
+.rock-support-tickets-wrapper {
+	border: 1px solid rgba($color: $white, $alpha: .1);
+	border-radius: 20px;
+	padding: 24px 24px;
+	@media #{$xs} {
+		padding: 14px 14px;
+	}
+}
+.rock-support-tickets-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+	.rock-support-tickets-item {
+		width: calc(50% - 34px);
+		@media #{$xs,$sm,$md,$lg} {
+			width: calc(80% - 34px);
+		}
+		@media #{$xxs} {
+			width: calc(100% - 34px);
+		}
+		&:nth-child(even) {
+			margin-left: auto;
+			.rock-support-tickets-aviator {
+				justify-content: end;
+			}
+		}
+	}
+}
+.rock-support-tickets-aviator {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 15px;
+	.thumb {
+		width: 32px;
+	}
+	.contets {
+		.title {
+			font-size: 14px;
+			color: var(--td-white);
+			font-weight: 700;
+			line-height: 1;
+		}
+		.info {
+			font-size: 11px;
+		}
+	}
+}
+.rock-support-tickets-card {
+	background: rgba($white, $alpha: 0.08);
+	border: 1px solid rgba($white, $alpha: 0.08);
+	border-radius: 20px;
+	padding: 24px 24px;
+	.rock-support-tickets-content {
+		& > .description {
+			font-size: 14px;
+			color: var(--td-white);
+		}
+	}
+	.rock-support-tickets-attachments {
+		margin-top: 35px;
+		.content {
+			.title {
+				background: linear-gradient(135deg, var(--td-secondary) 0%, var( --td-tertiary) 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				text-fill-color: transparent;
+				font-size: 14px;
+				margin-bottom: 10px;
+			}
+			.description {
+				color: var(--td-white);
+			}
+		}
+	}	
+}
+.rock-support-tickets-input-wrapper {
+	margin-top: 225px;
+	@media #{$xxl} {
+		margin-top: 150px;
+	}
+	@media #{$xl} {
+		margin-top: 100px;
+	}
+	@media #{$lg,$md} {
+		margin-top: 80px;
+	}
+	@media #{$xs,$sm} {
+		margin-top: 50px;
+	}
+}
+.rock-support-tickets-input {
+	position: relative;
+	input {
+		padding: 0px 370px 0 15px;
+		background: rgba($white, $alpha: .08);
+		border: 1px solid rgba($white, $alpha: .08);
+		outline: none;
+		height: 76px;
+		width: 100%;
+		font-size: 14px;
+		color: rgba($color: $white, $alpha: .5);
+		@include border-radius(12px);
+		&:focus {
+			border-color: var(--td-primary);
+		}
+		@media #{$xs} {
+			padding: 0px 160px 0 15px;
+		}
+		@media #{$xxs} {
+			padding: 0px 15px 0 15px;
+			height: 55px;
+		}
+	}
+	.button-inner {
+		position: absolute;
+		top: 50%;
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		right: 15px;
+		transform: translateY(-50%);
+		@media #{$xxs} {
+			position: inherit;
+			top: inherit;
+			right: inherit;
+			transform: inherit;
+			margin-top: 20px;
+			.site-btn {
+				width: 100%;
+			}
+		}
+		.button-attachments {
+			@media #{$xs} {
+				display: none;
+			}
+			span {
+				font-size: 14px;
+			}
+		}
+	}
+}
+

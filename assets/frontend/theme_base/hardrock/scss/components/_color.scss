@@ -1,0 +1,65 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  Colors
+/*----------------------------------------*/
+.white-text {
+    color: var(--td-white) !important;
+}
+.black-text {
+    color: var(--td-black);
+}
+.text-primary {
+    color: var(--td-heading);
+}
+.theme-primary {
+    color: var(--td-bg-primary);
+}
+.theme-secondary {
+    color: var(--td-secondary);
+}
+.theme-text-primary {
+    color: var(--td-text-secondary);
+}
+.theme-text-secondary {
+    color: var(--td-text-secondary);
+}
+.theme-text-tertiary {
+    color: var(--td-text-tertiary);
+}
+.warning-text {
+    color: var(--td-warning);
+}
+.success-text {
+    color: var(--td-success);
+}
+.danger-text {
+    color: var(--td-danger);
+}
+.green-text {
+    color: var(--td-green);
+}
+.magenta-text {
+    color: var(--td-magenta);
+}
+.sidecar-text {
+    color: var(--td-sidecar);
+}
+.pinkDiamond-text {
+    color: var(--td-pinkDiamond);
+}
+.kissable-text {
+    color: var(--td-kissable);
+}
+.kittensEye-text {
+    color: var(--td-kittensEye);
+}
+.pureLaughter-text {
+    color: var(--td-pureLaughter);
+}
+.gradient-text-1 {
+    background: linear-gradient(135deg, rgb(253, 217, 136) 0%, rgb(250, 130, 111) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

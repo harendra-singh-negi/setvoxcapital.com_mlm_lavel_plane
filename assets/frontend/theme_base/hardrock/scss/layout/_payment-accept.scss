@@ -1,0 +1,19 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* payment accept style
+/*----------------------------------------*/
+.rock-payment-accept-section {
+  margin-bottom: 200px;
+  @media #{$xs,$sm,$md,$lg} {
+    margin-bottom: 100px
+  }
+}
+.rock-payment-thumb {
+  img {
+    opacity: 0.5;
+  }
+}
+.swiper-wrapper {
+  transition-timing-function: linear;
+}

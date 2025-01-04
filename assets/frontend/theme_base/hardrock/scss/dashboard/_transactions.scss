@@ -1,0 +1,58 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* transactions 
+/*----------------------------------------*/
+.common-table-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) auto;
+  width: 100%;
+  gap: 15px;
+  margin-bottom: 24px;
+  @media #{$xs,$sm} {
+    grid-template-columns: 1fr;
+  }
+  .rock-single-input {
+    margin-bottom: 0 !important; 
+  }
+  .input-field {
+    position: relative;
+    input {
+      outline: none;
+      background-color: transparent;
+      height: 45px;
+      width: 100%;
+      font-size: 14px;
+      border: none;
+      border: 1px solid rgba(173, 171, 168, 0.6);
+      color: var(--td-text-primary);
+      @include border-radius(12px);
+      padding: 0 48px 0px 15px;
+
+      &:focus {
+        border-color: var(--td-primary);
+      }
+    }
+    .input-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .site-btn {
+    @include border-radius(12px);
+    border: 0;
+  }
+}
+.datepicker-picker {
+  background-color: #373746;
+}
+.datepicker-controls {
+  gap: 5px;
+  .btn {
+    background-color: rgba($white, $alpha: 0.08);
+    border-color: rgba($white, $alpha: 0.03);
+    color: var(--td-white);
+  }
+}

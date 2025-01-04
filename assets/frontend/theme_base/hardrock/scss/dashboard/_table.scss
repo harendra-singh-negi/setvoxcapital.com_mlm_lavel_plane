@@ -1,0 +1,267 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* site table
+/*----------------------------------------*/
+.sort-icon {
+  > {
+    span {
+      position: relative;
+      &:before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: url(../images/icons/arrow-sort-up.png) no-repeat;
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(100% + 7px);
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: url(../images/icons/arrow-sort-down.png) no-repeat;
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(100% + 17px);
+        opacity: 40%;
+      }
+    }
+  }
+}
+// custom-table
+.rock-custom-table {
+  @media #{$xs,$sm,$md,$lg} {
+    min-width: 1100px;
+  }
+  .contents {
+    display: table;
+    width: 100%;
+    .site-table-head {
+      .site-table-col {
+        padding: 16px 0px;
+        font-size: 12px !important;
+        font-weight: 400;
+        color: var(--td-white);
+        background: rgba(143, 148, 255, 0.1);
+        backdrop-filter: blur(4px);
+        border-bottom: 1px solid rgba($white, $alpha: 0.1);
+        &:first-child {
+          padding-left: 20px;
+          border-start-start-radius: 20px;
+          border-end-start-radius: 20px;
+        }
+        &:last-child {
+          border-end-end-radius: 20px;
+          border-top-right-radius: 20px;
+          padding-right: 20px;
+        }
+      }
+    }
+    .site-table-list {
+      display: table-row;
+      .site-table-col {
+        position: relative;
+        display: table-cell;
+        font-size: 14px;
+        font-weight: 500;
+        vertical-align: middle;
+        padding: 15px 0.5rem 14px 0px;
+        border-bottom: 1px solid rgba($white, $alpha: 0.1);
+        .description {
+          @include flexbox();
+          align-items: center;
+          gap: 11px;
+          .content {
+            .title {
+              margin-bottom: 3px;
+              font-size: 14px;
+              font-weight: 700;
+              a {
+                &:hover {
+                  color: var(--td-primary);
+                }
+              }
+            }
+            .description {
+              font-size: 11px;
+              margin-bottom: 0;
+            }
+          }
+        }
+        .action {
+          @include flexbox();
+          flex-direction: row;
+          align-items: center;
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+      &:last-child {
+        .site-table-col {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+}
+//schema-logs table
+.rock-filter-table-form {
+  display: grid;
+  grid-template-columns: 395px auto;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 20px 20px;
+  @media #{$md} {
+    grid-template-columns: 50% auto;
+  }
+  @media #{$xs,$sm} {
+    grid-template-columns: 1fr;
+  }
+  .rock-single-input {
+    margin-bottom: 0 !important;
+  }
+}
+.filter-length {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  > span {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--td-white);
+  }
+  .nice-select {
+    border-radius: 10px;
+    @include flexbox();
+    align-items: center;
+    float: none;
+    border: 1px solid rgba($white, $alpha: .08);
+    @include border-radius(12px);
+    background-color: rgba($color: $white, $alpha: .08);
+    .current {
+      text-align: left;
+      font-size: 14px;
+      position: relative;
+      color: var(--td-white);
+    }
+    .list {
+      transform-origin: center center;
+      -webkit-transform: scale(1) translateY(0px);
+      -moz-transform: scale(1) translateY(0px);
+      -ms-transform: scale(1) translateY(0px);
+      -o-transform: scale(1) translateY(0px);
+      transform: scale(1) translateY(0px);
+      width: 100%;
+      padding: 10px 0;
+      @include border-radius(6px);
+      background-color: rgb(16 16 16);
+    }
+    &::after {
+      font-size: 16px;
+      right: 16px;
+      width: 6px;
+      height: 6px;
+      border-bottom: 1.5px solid var(--td-text-primary);
+      border-right: 1.5px solid var(--td-text-primary);
+      font-size: 16px;
+      content: "";
+      position: absolute;
+      top: 50%;
+      border-color: var(--td-white);
+    }
+    .option {
+      font-size: 14px;
+      line-height: 35px;
+      min-height: 35px;
+      color: rgba($color: $white, $alpha: 1);
+      &.selected {
+        font-weight: 500;
+      }
+    }
+    &.open,
+    &:focus {
+      border-color: var(--td-primary);
+    }
+    .option {
+      &:hover {
+        background-color: #222123;
+      }
+    }
+    .option.focus {
+      background-color: #222123;
+    }
+    .option.selected.focus {
+      background-color: #222123;
+    }
+  }
+}
+.rock-schema-logs-table {
+  overflow-x: auto;
+  .rock-custom-table {
+    @media #{$xs,$sm,$md,$lg,$xxl,$x3l} {
+      min-width: 1400px;
+    }
+  }
+
+}
+// transactions table
+.transactions-description {
+  @include flexbox();
+  align-items: center;
+  gap: 11px;
+  .content {
+    .title {
+      margin-bottom: 3px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .description {
+      font-size: 11px;
+    }
+  }
+}
+.rock-recent-transactions-table {
+  overflow-x: auto;
+}
+
+// withdraw account table
+.rock-withdraw-account-table {
+  .rock-custom-table {
+    .contents {
+      .site-table-head {
+        .site-table-col {
+          &:last-child {
+            text-align: end;
+          }
+        }
+      }
+      .site-table-list {
+        .site-table-col {
+          &:last-child {
+            text-align: end;
+          }
+        }
+      }
+    }
+  }  
+}
+.account-description {
+  @include flexbox();
+  align-items: center;
+  gap: 11px;
+  .content {
+    .title {
+      margin-bottom: 3px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--td-white);
+    }
+    .description {
+      font-size: 11px;
+    }
+  }
+}

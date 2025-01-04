@@ -1,0 +1,95 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* Newslatter style
+/*----------------------------------------*/
+.rock-newsletter-wrapper {
+  padding: 65px 50px 105px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  @media #{$xs} {
+    padding: 45px 30px 75px;
+  }
+}
+.rock-newsletter-content {
+  max-width: 737px;
+  margin: 0 auto;
+  text-align: center;
+  .newsletter-form {
+    form {
+      @include flexbox();
+      align-items: center;
+      gap: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      @media #{$xs,$sm} {
+        flex-direction: column;
+      }
+    }
+    .single-input {
+      flex: auto;
+      input {
+        background: rgba(255, 255, 255, 0.1); 
+        backdrop-filter: blur(4px);
+        @include border-radius(100px);
+        height: 50px;
+        width: 100%;
+        padding: 0 20px;
+        color: var(--td-white);
+        border: none;
+        font-weight: 500;
+        outline: none;
+        font-size: 14px;
+        border: 1px solid rgba(173, 171, 168, 0.6);
+        @include td-placeholder {
+          color: rgba($white, $alpha: 0.3);
+        }
+        &:focus {
+          border-color: var(--td-white);
+        }
+      }
+      .input-feild {
+        position: relative;
+        &::after {
+          position: absolute;
+          content: "";
+          inset: 0;
+          @include border-radius(100px);
+          padding: 2px;
+          background: linear-gradient(139.9deg, rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.4) 100%);
+          -webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          z-index: -1;
+        }
+      }
+    }
+    .site-btn {
+      flex: 0 0 auto;
+      height: 50px;
+      padding: 0 27px !important;
+      @media #{$xs,$sm} {
+        width: 100%;
+      }
+    }
+  }
+}
+.rock-newsletter-shapes {
+  .shape-one {
+    position: absolute;
+    right: -12%;
+    top: 0%;
+    @media #{$xs,$sm} {
+      max-width: 80px;
+    }
+  }
+  .shape-two {
+    position: absolute;
+    bottom: -17%;
+    left: -9%;
+    @media #{$xs,$sm} {
+      max-width: 40px;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* video style
+/*----------------------------------------*/
+.rock-video-section {
+  margin-bottom: 30px;
+  @media #{$xs,$sm,$md} {
+    margin-bottom: 0;
+  }
+}
+.rock-video-thumb {
+  position: relative;
+  img {
+    background: rgba($white, $alpha: 0.1);
+    backdrop-filter: blur(4px);
+    @include border-radius(20px);
+    width: 100%;
+  }
+  .play-btn {
+    width: 72px;
+    height: 72px;
+    @include inline-flex();
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba($white, $alpha: 0.34);
+    border: 1px solid rgba($white, $alpha: 0.7);
+    color: var(--td-warning);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      border: 1px solid rgba($white, $alpha: 0.7);
+      top: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0px;
+      bottom: 0px;
+      z-index: 0;
+      animation-name: popupBtn;
+      animation-duration: 1.6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      border: 1px solid rgba($white, $alpha: 0.7);
+      top: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      bottom: 0px;
+      z-index: 0;
+      animation-name: popupBtn;
+      animation-duration: 1.8s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: -1;
+    }
+  }
+}

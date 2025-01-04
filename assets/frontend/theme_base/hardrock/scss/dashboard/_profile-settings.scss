@@ -1,0 +1,61 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* Profile Setting 
+/*----------------------------------------*/
+.rock-profile-avater {
+  margin-bottom: 25px;
+  .thumb-wrapper {
+    position: relative;
+    width: max-content;
+    .thumb {
+      background: rgba($white, $alpha: 0.08);
+      border: 1px dashed rgba($white, $alpha: 0.1);
+      border-radius: 152px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      position: relative;
+      z-index: 0;
+      img {
+        @include border-radius(50%);
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        top: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+        z-index: 1;
+        @include border-radius(50%);
+      }
+    }
+    .edit-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .title {
+    margin-bottom: 20px;
+    color: var(--td-white);
+    font-size: 16px;
+  }
+}
+.rock-profile-security-content {
+  .description {
+    font-size: 14px;
+    color: var(--td-white);
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.rock-profile-security-input {
+  margin-top: 65px;
+}

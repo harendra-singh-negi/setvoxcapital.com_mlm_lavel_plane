@@ -1,0 +1,89 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* Blog style
+/*----------------------------------------*/
+.rock-blog-area {
+  padding-top: 145px;
+  padding-bottom: 150px;
+}
+.rock-blog-grid-item {
+  padding: 12px 12px 20px;
+  position: relative;
+  z-index: 2;
+  transition: all .3s;
+  @include border-radius(10px);
+  overflow: hidden;
+  &:hover {
+    background-color: rgba($white, $alpha: 0.1);
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    @include border-radius(10px);
+    padding: 1px;
+    background: linear-gradient(127.07deg, rgba($white, $alpha: 0.1) 0%, rgba(255, 255, 255, 0.4) 100%);
+    -webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+  .blog-thumb {
+    margin-bottom: 35px;
+    img {
+      @include border-radius(10px);
+      width: 100%;
+    }
+  }
+  .blog-title {
+    font-size: 18px;
+    color: var(--td-white);
+    margin-bottom: 20px;
+  }
+  .description {
+    font-size: 12px;
+    margin-bottom: 30px;
+    color: rgba($white, $alpha: 0.7);
+  }
+  .blog-date {
+    span {
+      font-size: 10px;
+      margin-bottom: 20px;
+      display: block;
+      color: rgba($white, $alpha: 0.7);
+    }
+  }
+  .blog-link {
+    text-align: end;
+  }
+}
+.blog-slider-btn {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: rgba($white, $alpha: 0.08);
+  border: 1px solid rgba($white, $alpha: 0.08);
+  @media #{$xs,$sm,$md,$lg} {
+    width: 50px;
+    height: 50px;
+  }
+}
+.blog-slider-navigation {
+  @media #{$xs,$sm,$md,$lg} {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .blog-slider-btn {
+    position: absolute;
+    top: 50%;
+    left: -86px;
+    @media #{$xs,$sm,$md,$lg} {
+      position: inherit;
+    }
+    &.blog-slider-next {
+      left: auto;
+      right: -86px;
+    }
+  }
+}

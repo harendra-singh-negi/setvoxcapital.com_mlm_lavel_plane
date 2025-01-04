@@ -1,0 +1,190 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* investment calculator style
+/*----------------------------------------*/
+.investment-calculator-form {
+  .single-input {
+    .nice-select {
+			margin-bottom: 20px;
+			width: 100%;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: flex;
+			align-items: center;
+			float: none;
+			background: rgba($white, $alpha: 0.1);
+      @include border-radius(100px);
+			height: 70px;
+			padding: 0 30px;
+			border: 0;
+			font-weight: 500;
+			position: relative;
+			&:before {
+				position: absolute;
+				content: "";
+				inset: 0;
+        @include border-radius(100px);
+				padding: 2px;
+				background: linear-gradient(139.9deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
+				-webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				z-index: -1;
+			}
+			.current {
+				text-align: left;
+				font-size: 14px;
+				position: relative;
+				color: var(--td-white);
+			}
+			.list {
+				transform-origin: center center;
+				-webkit-transform: scale(1) translateY(0px);
+				-moz-transform: scale(1) translateY(0px);
+				-ms-transform: scale(1) translateY(0px);
+				-o-transform: scale(1) translateY(0px);
+				transform: scale(1) translateY(0px);
+        @include transform(scale(1) translateY(0));
+				width: 100%;
+        @include border-radius(30px);
+				background: rgb(55, 47, 41);
+				mix-blend-mode: normal;
+				backdrop-filter: blur(22px);
+				padding: 12px;
+			}
+			&::after {
+        right: 40px;
+        width: 8px;
+        height: 8px;
+        border-bottom: 1.5px solid var(--td-text-primary);
+        border-right: 1.5px solid var(--td-text-primary);
+        font-size: 16px;
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        border: 5px solid;
+        border-top-color: rgba(0, 0, 0, 0);
+        border-left-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        transition: all ease-in-out 0.2s;
+        margin-top: -2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -o-border-radius: 2px;
+        -ms-border-radius: 2px;
+        border-radius: 2px;
+			}
+			.option {
+				font-size: 14px;
+				line-height: 40px;
+				min-height: 40px;
+				color: var(--td-white);
+				border-radius: 10px;
+				padding: 0 10px;
+				&.selected {
+					font-weight: 500;
+					&.focus {
+						background-color: #353535;
+					}
+				}
+				&:hover {
+					background-color: #353535;
+				}
+			}
+		}
+    input {
+      background: rgba($white, $alpha: 0.1);
+      backdrop-filter: blur(4px);
+      @include border-radius(100px);
+      height: 70px;
+      width: 100%;
+      padding: 0 30px;
+      color: var(--td-white);
+      border: none;
+      font-weight: 500;
+      position: relative;
+      outline: none;
+      &::after {
+        position: absolute;
+        content: "";
+      }
+      @include td-placeholder {
+        color: var(--td-white);
+      }
+      &:focus {
+        border: none;
+      }
+    }
+    .input-feild {
+      position: relative;
+      &:before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        @include border-radius(100px);
+        padding: 2px;
+        background: linear-gradient(
+          139.9deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 100%
+        );
+        -webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+      }
+      .icon {
+        position: absolute;
+        top: 50%;
+        right: 34px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  .input-description {
+    color: var(--td-primary);
+    font-weight: 500;
+    font-size: 12px;
+    text-align: end;
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+  .investment-gradient-btn {
+    margin-top: 78px;
+  }
+}
+.investment-calculator-shapes {
+  .shape-one {
+    position: absolute;
+    top: -38%;
+    left: -8%;
+    z-index: -1;
+
+    @media #{$xs,$sm} {
+      display: none;
+    }
+  }
+  .shape-two {
+    position: absolute;
+    right: -7%;
+    bottom: -45%;
+    z-index: -1;
+
+    @media #{$xs,$sm} {
+      display: none;
+    }
+  }
+  .shape-three {
+    position: absolute;
+    top: -122px;
+    left: 53px;
+    z-index: -1;
+    max-width: 958px;
+    mix-blend-mode: lighten;
+    opacity: 10%;
+  }
+}

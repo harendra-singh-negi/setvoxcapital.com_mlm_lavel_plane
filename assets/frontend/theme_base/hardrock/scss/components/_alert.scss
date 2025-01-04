@@ -1,0 +1,52 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  Alerts Styles
+/*----------------------------------------*/
+#customAlert {
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    opacity: 1;
+    visibility: visible;
+}
+  
+#customAlert.hide {
+    opacity: 0;
+    visibility: hidden;
+}  
+.rock-alert {
+    background-color: rgba($white, $alpha: 0.1);
+    .alert-content-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px 10px;
+        .alert-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .icon {
+                width: 45px;
+                height: 45px;
+                display: inline-block;
+                background-color: var(--td-primary);
+                color: var(--td-white);
+                border-radius: 50%;
+                flex: 0 0 auto;
+                line-height: 40px;
+                text-align: center;
+            }
+            strong {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+        .alert-btn-groupe {
+            .site-btn {
+                height: 34px;
+                padding: 0 14px;
+                font-size: 12px;    
+            }
+        }
+    }
+}

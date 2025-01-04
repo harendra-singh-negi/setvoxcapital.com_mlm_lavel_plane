@@ -1,0 +1,65 @@
+@use '../utils' as *;
+
+/*----------------------------------------
+   Basic pagination
+-----------------------------------------*/
+.pagination-wrapper {
+	margin-top: 10px;
+}
+.rock-pagination {
+	ul {
+		@include flexbox();
+		align-items: center;
+		gap: 5px;
+		flex-wrap: wrap;
+		@media #{$xs,$sm,$md}{
+			justify-content: start;
+		}
+		li {
+			list-style: none;
+			&:first-child,
+			&:last-child {
+				a {
+					border-color: transparent;
+				}
+			}
+			a {
+				width: 45px;
+				height: 45px;
+				@include inline-flex();
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				right: 0;
+				top: 50%;
+				font-weight: 500;
+				font-size: 14px;
+				border: 1px solid rgba($white, $alpha: 0.08);
+				@include border-radius(12px);
+				&:hover {
+					background-color: rgba($white, $alpha: 0.08);
+					color: var(--td-white);
+					border-color: rgba($white, $alpha: 0.03);
+				}
+				i {
+					font-weight: 500;
+				}
+			}
+			.current {
+				width: 45px;
+				height: 45px;
+				@include inline-flex();
+				align-items: center;
+				justify-content: center;
+				position: relative;
+				right: 0;
+				top: 50%;
+				font-weight: 500;
+				font-size: 16px;
+				background-color: rgba($white, $alpha: 0.08);
+				color: var(--td-white);
+				border-color: rgba($white, $alpha: 0.03);
+			}
+		}
+	}
+}

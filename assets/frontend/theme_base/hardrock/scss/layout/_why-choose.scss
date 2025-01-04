@@ -1,0 +1,79 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* rock why choose style
+/*----------------------------------------*/
+
+.rock-why-choose-section {
+  padding-top: 250px;
+  @media #{$lg} {
+    padding-top: 100px;
+  }
+  @media #{$xs,$sm,$md} {
+    padding-top: 65px;
+  }
+}
+.rock-why-choose-grid {
+  @include gridbox();
+  grid-template-columns: 273px 273px 273px 273px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 85px;
+  margin-bottom: 50px;
+  @media #{$lg} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media #{$xs,$sm,$md} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media #{$xxs} {
+    grid-template-columns: 1fr;
+  }
+}
+.rock-why-choose-item {
+  text-align: center;
+  .icon {
+    margin-bottom: 30px;
+    span {
+      width: 104px;
+      height: 104px;
+      background: rgba($color: $white, $alpha: .1);
+      backdrop-filter: blur(4px);
+      @include border-radius(30px);
+      @include inline-flex();
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        @include border-radius(30px);
+        padding: 2px;
+        background: linear-gradient(
+          145.53deg,
+          rgba(255, 255, 255, 0) 57.499998807907104%,
+          rgba(255, 255, 255, 1) 100%
+        );
+        -webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+      }
+    }
+  }
+  .content {
+    .title {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: var(--td-white);
+    }
+    .description {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba($color: $white, $alpha: .7);
+    }
+  }
+}

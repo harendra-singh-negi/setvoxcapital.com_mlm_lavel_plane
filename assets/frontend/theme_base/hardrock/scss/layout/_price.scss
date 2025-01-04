@@ -1,0 +1,167 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/* Price style
+/*----------------------------------------*/
+.rock-pricing-main {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  position: relative;
+  @media #{$lg} {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media #{$xs,$sm} {
+    padding-top: 45px;
+    padding-bottom: 0px;
+  }
+}
+.rock-pricing-section {
+  padding-bottom: 70px;
+}
+.price-world-bg {
+  position: absolute;
+  top: -40px;
+  height: 100%;
+  width: 110%;
+  z-index: -1;
+  opacity: 0.4;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.rock-pricing-item {
+  background: rgba($white, $alpha: 0.1);
+  backdrop-filter: blur(4px);
+  @include border-radius(20px);
+  padding: 30px 30px;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  &:before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    @include border-radius(20px);
+    padding: 2px;
+    background: linear-gradient(139.9deg,rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.4) 100%);
+    -webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+  @media #{$xs,$xl} {
+    padding: 25px 20px 25px;
+  }
+  &.is-active {
+    background: rgba(255, 146, 17, 0.1);
+    backdrop-filter: blur(4px);
+    @include border-radius(20px);
+    &::before {
+      background: linear-gradient(139.9deg,rgba(255, 163, 54, 0.4) 0%,  rgba(255, 163, 54, 0) 100%);
+    }
+  }
+  &.outline-hidden {
+    &::before {
+      display: none;
+    }
+  }
+  .item-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--td-white);
+    @media #{xs} {
+      font-size: 20px;
+    }
+  }
+  .price-value {
+    @include flexbox();
+    align-items: center;
+    gap: 10px;
+  }
+  .price-badge {
+    background: rgba($white, $alpha: 0.08);
+    mix-blend-mode: normal;
+    border: 1px solid rgba($white, $alpha: 0.08);
+    border-radius: 32px;
+    padding: 5px 11px;
+    display: inline-block;
+    color: var(--td-white);
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .price-suggest {
+    font-size: 12px;
+    color: var(--td-seaweed);
+    font-weight: 500;
+  }
+  .price-list {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    ul {
+      li {
+        list-style: none;
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+        .single-list {
+          @include flexbox();
+          justify-content: space-between;
+          width: 100%;
+          .list-content {
+            @include flexbox();
+            align-items: start;
+            gap: 10px;
+            .list-item-text {
+              color: rgba($white, $alpha: 0.7);
+              font-size: 14px;
+            }
+            .icon-list {
+              li {
+                list-style: none;
+                @include flexbox();
+                align-items: start;
+                gap: 10px;
+
+                &:not(:last-child) {
+                  margin-bottom: 20px;
+                }
+                .list-item-text {
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+          .list-valu {
+            span {
+              font-size: 14px;
+              font-weight: 500;
+              color: var(--td-seaweed);
+            }
+          }
+        }
+      }
+    }
+  }
+  .price-btn-wrp {
+    text-align: center;
+    .description {
+      color: var(--td-seaweed);
+      font-size: 10px;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+  }
+  .price-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+.rock-dashboard-pricing-section {
+  .rock-pricing-item {
+    @media #{$x3l} {
+      padding: 25px 25px;
+    }
+  }
+}

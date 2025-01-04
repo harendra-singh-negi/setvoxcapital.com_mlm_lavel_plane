@@ -1,0 +1,121 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* investors style
+/*----------------------------------------*/
+.rock-investors-section {
+  padding-top: 270px;
+  @media #{$xs,$sm,$md,$lg} {
+    padding-top: 85px;
+  }
+}
+.rock-investors-wrapper {
+  padding: 25px 25px;
+  background: rgba($white, $alpha: 0.1);
+  backdrop-filter: blur(4px);
+  @include border-radius(20px);
+  &.style-two {
+    .rock-investors-item {
+      grid-template-columns: 67% auto auto;
+
+      @media #{$xs,$lg} {
+        grid-template-columns: 50% auto auto;
+      }
+
+      @media #{$xxs} {
+        grid-template-columns: auto auto;
+      }
+    }
+  }
+  .title {
+    font-size: 18px;
+    color: var(--td-white);
+    margin-bottom: 20px;
+  }
+}
+.rock-investors-grid {
+  @include gridbox();
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 30px;
+  @media #{$xs,$sm,$md} {
+    grid-template-columns: 1fr;
+  }
+}
+.rock-investors-item {
+  @include gridbox();
+  grid-template-columns: 40% 15% auto;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media #{$xs,$lg} {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @media #{$xxs} {
+    grid-template-columns: auto auto;
+  }
+  &:not(:last-child) {
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba($white, $alpha: 0.1);
+  }
+  .rock-investors-contents {
+    @include flexbox();
+    align-items: center;
+    gap: 20px;
+    .content {
+      .title {
+        color: var(--td-white);
+        font-size: 12px;
+        margin-bottom: 3px;
+        line-height: 1.5;
+      }
+      .description {
+        color: rgba($white, $alpha: 0.7);
+        font-size: 10px;
+        font-weight: normal;
+      }
+    }
+  }
+  .rock-investors-bagde {
+    .site-bade {
+      background: rgba(20, 191, 140, 0.6);
+      mix-blend-mode: normal;
+      @include border-radius(100px);
+      padding: 7px 20px;
+      color: var(--td-white);
+      font-size: 10px;
+      &.warning-badge {
+        background-color: var(--td-warning);
+      }
+    }
+  }
+  .rock-currency {
+    .small-dolar {
+      font-size: 10px;
+      color: #14BF8C;
+    }
+    .dolar {
+      font-size: 12px;
+      color: var(--td-white);
+    }
+  }
+}
+.rock-investors-shapes {
+  .shape-one {
+    position: absolute;
+    top: 25%;
+    left: -8%;
+    z-index: -1;
+    filter: blur(4.5px);
+  }
+  .shape-two {
+    position: absolute;
+    right: -5%;
+    bottom: -8%;
+    filter: blur(4.5px);
+  }
+}

@@ -1,0 +1,103 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.12 Badge
+/*----------------------------------------*/
+
+// Badge
+.rock-badge {
+	background: rgba(133, 255, 196, 0.1);
+	border: 1px solid var(--td-success);
+	border-radius: 100px;
+	font-size: 12px;
+	padding: 5px 10px 5px 25px;
+	color: var(--td-success);
+	position: relative;
+	&:before {
+		position: absolute;
+		content: "";
+		height: 8px;
+		width: 8px;
+		display: inline-block;
+		background: var(--td-success);
+		left: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		border-radius: 50%;
+	}
+	&.warning {
+		color: var(--td-warning);
+		border-color:var(--td-warning);
+		background: rgba(255, 163, 54, 0.1);
+		&::before {
+			background-color: currentColor;
+		}
+	}
+	&.danger {
+		color: var(--td-danger);
+		background: rgba(255, 62, 62, 0.1);
+		border-color: var(--td-danger);
+		&::before {
+			background-color: currentColor;
+		}
+	}
+	&.white {
+		color: var(--td-white);
+		background: rgba($white, $alpha: 0.1);
+		border-color: var(--td-white);
+		border-radius: 100px;
+		&::before {
+			background-color: currentColor;
+		}
+	}
+	&.white-opcity {
+		color: var(--td-white);
+		background: rgba($white, $alpha: 0.08);
+		border: 1px solid rgba($white, $alpha: 0.08);
+		border-radius: 100px;
+	}
+	&.candle-light {
+		color: var(--td-candleLight);
+		background: rgba($color: $white, $alpha: .1);
+		border-color: var(--td-candleLight);
+		&::before {
+			background-color: currentColor;
+		}
+	}
+	&.badge-icon {
+		padding: 5px 10px 5px 10px;
+		&::before {
+			display: none;
+		}
+	}
+}
+.td-badge {
+    font-size: 14px;
+    text-transform: capitalize;
+    display: inline-block;
+    padding: 6px 15px;
+    color: var(--td-heading);
+    line-height: 1;
+    text-align: center;
+    background-color: var(--td-white);
+	&.primary {
+		background: var(--td-primary);
+		color: var(--td-white);
+	}
+	&.warning {
+		background: var(--td-tertiary);
+		color: var(--td-white);
+	}
+	&.danger {
+		color: var(--td-white);
+		background: var(--td-bg-danger);
+	}
+	&.success {
+		color: var(--td-white);
+		background: var(--td-bg-success);
+	}
+	&.black {
+		color: var(--td-white);
+		background: var(--td-black);
+	}
+}

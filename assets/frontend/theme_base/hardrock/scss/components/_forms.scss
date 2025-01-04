@@ -1,0 +1,380 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  forms scss
+/*----------------------------------------*/
+
+// input style
+.rock-single-input {
+	.input-label {
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 10px;
+		color: var(--td-white);
+	}
+	.input-field {
+		position: relative;
+		&.disabled {
+			input[type="text"],
+			input[type="email"],
+			input[type="tel"],
+			input[type="number"],
+			input[type="password"],
+			input[type="date"],
+			textarea {
+				color: rgba($color: $white, $alpha: .5);
+				cursor: not-allowed;
+				&:focus {
+					border-color: rgba($white, $alpha: .08);
+				}
+			}
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		input[type="password"],
+		input[type="date"],
+		textarea {
+			padding: 0px 15px 0 15px;
+			background: rgba($white, $alpha: .08);
+			border: 1px solid rgba($white, $alpha: .08);
+			outline: none;
+			height: 45px;
+			width: 100%;
+			font-size: 14px;
+			color: rgba($color: $white, $alpha: .5);
+			@include border-radius(12px);
+			&:focus {
+				border-color: var(--td-primary);
+			}
+		}
+		textarea {
+			padding: 12px 15px;
+			height: 150px;
+			resize: none;
+			&:focus {
+				border-color: var(--td-primary);
+			}
+		}
+	}
+	.input-icon {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.input-description {
+		font-size: 12px;
+		font-weight: 500;
+		margin-top: 5px;
+		color: var(--td-seaweed);
+	}
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+	.rock-input-label {
+		font-size: 14px;
+		margin-bottom: 10px;
+		color: var(--td-white);
+		span {
+			padding-left: 4px;
+		}
+	}
+	.input-field {
+		input {
+			outline: none;
+			height: 45px;
+			width: 100%;
+			font-size: 14px;
+			color: var(--td-text-primary);
+			padding: 0 12px;
+			background: rgba($color: $white, $alpha: .08);
+			mix-blend-mode: normal;
+			border: 1px solid rgba($color: $white, $alpha: .08);
+			@include border-radius(12px);
+			color: var(--td-white);
+			@include td-placeholder {
+				color: rgba($color: $white, $alpha: .3);
+			}
+			&:focus {
+				border-color: var(--td-primary);
+			}
+		}
+		&.input-group {
+			flex-wrap: nowrap;
+		}
+		.input-group-text {
+			color: var(--td-white);
+			background: rgba($color: $white, $alpha: .08);
+			mix-blend-mode: normal;
+			border: 1px solid rgba($color: $white, $alpha: .08);
+			@include border-radius(12px);
+		}
+	}
+	.input-select {
+		.nice-select {
+			height: 44px;
+			width: 100%;
+			padding: 0 15px;
+			@include flexbox();
+			align-items: center;
+			float: none;
+			border: 1px solid rgba($white, $alpha: .08);
+			@include border-radius(12px);
+			background-color: rgba($color: $white, $alpha: .08);
+			.current {
+				text-align: left;
+				font-size: 14px;
+				position: relative;
+				color: var(--td-white);
+			}
+			.list {
+				@include transform(scale(1) translateY(0));
+				width: 100%;
+				padding: 10px 0;
+				@include border-radius(6px);
+				background: #242424;
+				border-radius: 12px;
+				border-style: solid;
+				border-color: rgba(255, 255, 255, 0.08);
+				border-width: 1px;
+				padding: 12px 12px 12px 12px;
+				max-height: 300px;
+				overflow-y: scroll;
+				-ms-overflow-style: none;
+				/* IE and Edge */
+				scrollbar-width: none;
+				/* Firefox */
+			}
+			&::after {
+				font-size: 16px;
+				right: 16px;
+				width: 8px;
+				height: 8px;
+				border-bottom: 1.5px solid var(--td-text-primary);
+				border-right: 1.5px solid var(--td-text-primary);
+				font-size: 16px;
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%) rotate(45deg);
+				border: 5px solid;
+				border-top-color: rgba(0, 0, 0, 0);
+				border-left-color: rgba(0, 0, 0, 0);
+				background-color: rgba(0, 0, 0, 0);
+				transition: all ease-in-out 0.2s;
+				margin-top: -2px;
+				@include border-radius(2px);
+			}
+			.option {
+				font-size: 14px;
+				line-height: 38px;
+				min-height: 38px;
+				color: var(--td-white);
+				border-radius: 10px;
+				padding: 0 10px;
+				&.selected {
+					font-weight: 500;
+				}
+				&:hover {
+					background-color: #353535;
+				}
+				&.selected.focus {
+					background-color: #353535;
+				}
+			}
+			&.open,
+			&:focus {
+				background-color: #353535;
+			}
+		}
+	}
+	.verification {
+		@include flexbox();
+		gap: 10px;
+		justify-content: space-between;
+		max-width: 355px;
+		margin: 0 auto;
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		input[type="password"],
+		input[type="date"],
+		textarea {
+			padding: 0px 15px 0 15px;
+			background: rgba($white, $alpha: .08);
+			border: 1px solid rgba($white, $alpha: .08);
+			outline: none;
+			height: 50px;
+			width: 50px;
+			text-align: center;
+			font-size: 16px;
+			color: var(--td-white);
+			@include border-radius(6px);
+			&:focus {
+				border-color: var(--td-primary);
+			}
+		}
+	}
+}
+.rock-single-input.has-invalid {
+	.input-field {
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		input[type="password"],
+		input[type="date"],
+		textarea {
+			&:focus {
+				border-color: var(--td-danger);
+			}
+		}
+		textarea {
+			&:focus {
+				border-color: var(--td-danger);
+			}
+		}
+	}
+}
+// feedback-invalid
+.feedback-invalid {
+	font-size: 14px;
+	margin-top: 5px;
+	color: var(--td-danger);
+}
+/*----------------------------------------
+   Image Preview 
+-----------------------------------------*/
+.rock-upload-input {
+	position: relative;
+	.input-label {
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 10px;
+		color: var(--td-white);
+	}
+}
+.file-upload-wrap {
+	.top-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 15px;
+	}
+	.input-label {
+		font-size: 14px;
+		font-weight: 500;
+		margin-bottom: 5px;
+		color: $black;
+	}
+}
+.upload-custom-file {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 155px;
+	text-align: center;
+	border-radius: 8px;
+	input[type="file"] {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 2px;
+		height: 2px;
+		overflow: hidden;
+		opacity: 0;
+	}
+	label {
+		z-index: 1;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		overflow: hidden;
+		cursor: pointer;
+		border-radius: 8px;
+		transition: transform 0.4s;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		-webkit-transition: -webkit-transform 0.4s;
+		-moz-transition: -moz-transform 0.4s;
+		-ms-transition: -ms-transform 0.4s;
+		-o-transition: -o-transform 0.4s;
+		transition: transform 0.4s;
+		background-color: rgba($black, $alpha: 0.1);
+		span {
+			display: block;
+			font-size: 14px;
+			-webkit-transition: color 0.4s;
+			-moz-transition: color 0.4s;
+			-ms-transition: color 0.4s;
+			-o-transition: color 0.4s;
+			transition: color 0.4s;
+			b {
+				color: var(--td-primary);
+				font-weight: 500;
+				text-decoration: underline;
+			}
+		}
+		.type-file-text {
+			margin-top: 5px;
+			color: var(--td-danger);
+		}
+		.upload-icon {
+			max-width: 35px;
+			margin: 0 auto;
+			margin-bottom: 5px;
+		}
+		&.file-ok {
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			span {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				padding: 0.3rem;
+				color: $white;
+				font-weight: 500;
+				font-size: 16px;
+				margin: auto;
+				text-decoration: none;
+			}
+			.upload-icon {
+				display: none;
+			}
+		}
+	}
+	&.without-image {
+		height: 188px;
+		label {
+			background-color: rgba($color: $white, $alpha: .08);
+			border: 1px solid rgba($color: $white, $alpha: .08);
+			border-radius: 12px;
+			padding: 20px;		
+		}
+	}
+}
+.upload-thumb-close {
+	display: none;
+	position: absolute;
+	right: 10px;
+	top: 45px;
+	z-index: 5;
+	color: rgba($white, $alpha: .5);
+	border-radius: 50%;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid rgba($white, $alpha: .5);
+	font-size: 12px;
+	transition: none;
+}

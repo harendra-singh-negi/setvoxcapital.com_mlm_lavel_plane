@@ -1,0 +1,90 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* fun fact style
+/*----------------------------------------*/
+.fun-fact-counter-grid {
+  @include gridbox();
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  gap: 30px 50px;
+  position: relative;
+  @media #{$xs,$sm,$md} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media #{$xxs} {
+    grid-template-columns: 1fr;
+  }
+  .fun-fact-bg {
+    position: absolute;
+    top: -20%;
+    width: 1440px;
+    height: 700px;
+    filter: blur(302px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+}
+.single-counter-item {
+  position: relative;
+  &:nth-child(4) {
+    &::before {
+      display: none;
+    }
+  }
+  @media #{$sm,$md} {
+    &:nth-child(2n) {
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    height: 35px;
+    width: 1px;
+    background-color: rgba($white, $alpha: 0.2);
+    left: 109%;
+    bottom: 0%;
+    transform: translateY(-50%);
+
+    @media #{$xxs} {
+      display: none;
+    }
+  }
+  text-align: center;
+  .icon {
+    margin-bottom: 20px;
+  }
+  .content {
+    .title,
+    span {
+      font-family: var(--td-ff-body);
+      font-size: 56px;
+      color: var(--td-white);
+      font-weight: 200;
+      line-height: 1;
+      @media #{$xl,$md} {
+        font-size: 44px;
+      }
+      @media #{$sm} {
+        font-size: 40px;
+      }
+      @media #{$lg} {
+        font-size: 36px;
+      }
+      @media #{$xs} {
+        font-size: 32px;
+      }
+    }
+    .description {
+      color: var(--td-primary);
+      font-size: 12px;
+    }
+  }
+}

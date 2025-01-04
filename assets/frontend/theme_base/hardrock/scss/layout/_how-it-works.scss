@@ -1,0 +1,209 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  how it works style
+/*----------------------------------------*/
+.rock-how-it-main {
+    margin-top: 80px;
+}
+.rock-how-it-works-grid {
+  @include gridbox();
+  grid-template-columns: repeat(4,1fr);
+  gap: 50px 30px;
+  @media #{$xs,$sm,$md} {
+    grid-template-columns: repeat(2,1fr);
+  }
+  @media #{$xxs} {
+    grid-template-columns: 1fr;
+  }
+}
+.rock-how-it-works-item {
+  position: relative;
+  text-align: center;
+  @media #{$xs,$sm,$md} {
+    &:nth-child(2n) {
+      .line {
+        @media #{$xs,$sm,$md} {
+          display: none;
+        }
+      }
+    }
+  }
+  @media #{$xxs} {
+    .line {
+      @media #{$xs,$sm,$md} {
+        display: none;
+      }
+    }
+  }
+  .content {
+    .title {
+      color: var(--td-white);
+      font-size: 16px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .description {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba($white, $alpha: 0.7);
+    }
+  }
+  .icon {
+    margin-bottom: 22px;
+    span {
+      width: 104px;
+      height: 104px;
+      background: rgba($white, $alpha: 0.1);
+      backdrop-filter: blur(4px);
+      @include border-radius(100px);
+      @include inline-flex();
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: "";
+        inset: 0;
+        @include border-radius(100px);
+        padding: 2px;
+        background: linear-gradient(
+          187.69deg,
+          rgba(255, 205, 16, 0) 29.907450079917908%,
+          rgba(255, 205, 16, 0.4) 100%
+        );
+        -webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+      }
+    }
+  }
+  .line {
+    position: absolute;
+    top: 52px;
+    left: 105%;
+    width: 75%;
+    height: 1px;
+    background: var(--td-white);
+    transform: translateX(-50%);
+    @media #{$sm,$lg} {
+      left: 106%;
+      width: 67%;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: var(--td-white);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    &::after {
+      left: auto;
+      right: 0;
+    }
+  }
+  &:nth-child(2) {
+    .icon {
+      span {
+        background: rgba(167, 186, 255, 0.1);
+        &::before {
+          background: linear-gradient(
+            187.69deg,
+            rgba(167, 186, 255, 0) 29.907450079917908%,
+            rgba(167, 186, 255, 0.4) 100%
+          );
+        }
+      }
+    }
+  }
+  &:nth-child(3) {
+    .icon {
+      span {
+        background: rgba(85, 255, 224, 0.1);
+        &:before {
+          background: linear-gradient(
+            187.69deg,
+            rgba(85, 255, 224, 0) 29.907450079917908%,
+            rgba(85, 255, 224, 0.4) 100%
+          );
+        }
+      }
+    }
+  }
+  &:nth-child(4) {
+    .icon {
+      span {
+        background: rgba($white, $alpha: 0.1);
+        &::before {
+          background: linear-gradient(
+            187.69deg,
+            rgba(255, 255, 255, 0) 29.907450079917908%,
+            rgba(255, 255, 255, 0.4) 100%
+          );
+        }
+      }
+    }
+  }
+  &:nth-child(5) {
+    .icon {
+      span {
+        background: rgba(162, 255, 182, 0.1);
+        &::before {
+          background: linear-gradient(
+            187.69deg,
+            rgba(162, 255, 182, 0) 29.907450079917908%,
+            rgba(162, 255, 182, 0.4) 100%
+          );
+        }
+      }
+    }
+  }
+  &:nth-child(6) {
+    .icon {
+      span {
+        background: rgba(85, 112, 255, 0.1);
+        &::before {
+          background: linear-gradient(
+            187.69deg,
+            rgba(85, 112, 255, 0) 29.907450079917908%,
+            rgba(85, 112, 255, 0.4) 100%
+          );
+        }
+      }
+    }
+  }
+  &:nth-child(7) {
+    .icon {
+      span {
+        background: rgba(202, 255, 160, 0.1);
+        &::before {
+          background:linear-gradient(
+            187.69deg,
+            rgba(202, 255, 160, 0) 29.907450079917908%,
+            rgba(202, 255, 160, 0.4) 100%
+          );;
+        }
+      }
+    }
+  }
+  &:nth-child(8) {
+    .icon {
+      span {
+        background: rgba($white, $alpha: 0.1);
+        &:before {
+          background: linear-gradient(
+            187.69deg,
+            rgba(255, 255, 255, 0) 29.907450079917908%,
+            rgba(255, 255, 255, 0.4) 100%
+          );;
+        }
+      }
+    }
+  }
+}

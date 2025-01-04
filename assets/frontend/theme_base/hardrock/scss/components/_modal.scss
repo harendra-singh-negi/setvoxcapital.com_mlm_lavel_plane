@@ -1,0 +1,167 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  Modal
+/*----------------------------------------*/
+// Welcome modal
+#welcomeModal,
+#withdrawLogModal,
+#referModal {
+    background: rgba($black, $alpha: .1);
+    backdrop-filter: blur(5px);
+}
+.modal-dialog {
+	&.rock-dashborad-modal {
+        min-width: 740px;
+        @media #{$xs,$sm,$md} {
+            min-width: calc(100% - 20%);
+        }
+        .modal-content {
+            border: 0;
+            border-radius: 24px;
+            position: relative;
+            padding: 180px 50px 50px;
+            text-align: center;
+            background: rgba($color: $white, $alpha: .1);
+            backdrop-filter: blur(25px);
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 5;
+            @media #{$xs,$sm} {
+                padding: 100px 30px 30px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                @include border-radius(20px);
+                padding: 2px;
+                background: linear-gradient( 139.9deg,rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.2) 100%);
+                -webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+                z-index: -1;
+            }
+        }
+        .roct-modal-content-wrapper {
+            .rock-icon {
+                margin-top: -80px;
+                position: absolute;
+                top: -290px;
+                z-index: -1;
+                left: 0;
+                @media #{$sm} {
+                    top: -160px;
+                }
+                @media #{$xs,$sm} {
+                    top: -40px;
+                }
+            }
+            h3 {
+                &.title {
+                    font-size: 40px;
+                    color: var(--td-white);
+                    margin-bottom: 20px;
+                    @media #{$xs,$sm,$md} {
+                        font-size: 32px;
+                    }
+                    @media #{$xs,$sm} {
+                        font-size: 28px;
+                    }
+                    @media #{$xxs} {
+                        font-size: 24px;
+                    }
+                }
+            }
+            h4 {
+                color: var(--td-white);
+                margin-bottom: 25px;
+                @media #{$xs} {
+                    font-size: 18px;
+                }
+            }
+            .description {
+                font-size: 20px;
+                letter-spacing: -2px;
+                color: var(--td-white);
+                margin-bottom: 30px;
+                @media #{$xs,$sm,$md} {
+                    font-size: 16px;
+                }
+            }
+        }
+        .modal-btn-close {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+        }   
+        .modal-bg-pattern {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 20px;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            opacity: 38%;
+            background-size: 100% 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            z-index: -1;
+        } 
+	}
+}
+// withdraw log modal
+.modal-dialog {
+	&.rock-withdraw-log-modal {
+        max-width: 357px;
+        .modal-btn-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+        }
+		.modal-content {
+			border: 0;
+			border-radius: 24px;
+			position: relative;
+			padding: 40px 50px 50px;
+			text-align: center;
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(25px);
+			background-position: bottom;
+			background-repeat: no-repeat;
+			background-size: cover;
+			z-index: 5;
+		}
+	}
+}
+.roct-withdraw-log-modal-content {
+    .rock-icon {
+        margin-bottom: 30px;
+    }
+	.content {
+		background: rgba(255, 255, 255, 0.08);
+		border: 1.17398px solid rgba(255, 255, 255, 0.08);
+		border-radius: 12px;
+		padding: 12px 12px;
+        .description {
+            font-size: 12px;
+            color: var(--td-white);
+            font-weight: 400;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            @include border-radius(20px);
+            padding: 2px;
+            background: linear-gradient( 139.9deg,rgba(255, 255, 255, 0) 0%,rgba(255, 255, 255, 0.2) 100%);
+            -webkit-mask: linear-gradient(var(--td-white) 0 0) content-box, linear-gradient(var(--td-white) 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+	}
+}

@@ -1,0 +1,98 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/* Add Money
+/*----------------------------------------*/
+.rock-add-mony-wrapper {
+  .rock-input-btn-wrap {
+    margin-top: 60px;
+    @media #{$xs,$sm} {
+      margin-top: 30px;
+    }
+  }
+}
+.rock-add-mony-details {
+  >.title {
+    color: var(--td-white);
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+}
+.rock-add-mony-list {
+  border: 1px dashed rgba($white, $alpha: 0.1);
+  @include border-radius(12px);
+  overflow: hidden;
+  ul {
+    li {
+      @include flexbox();
+      align-items: center;
+      gap: 5px 5px;
+      justify-content: space-between;
+      padding: 21px 30px;
+      list-style: none;
+      &:not(:last-child) {
+        border: 1px dashed rgba($white, $alpha: 0.1);
+      }
+      @media #{$xxs} {
+        padding: 15px 15px;
+      }
+      .title,
+      .info {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--td-white);
+      }
+    }
+  }
+}
+// Modal
+.rock-add-mony-modal {
+  display: grid;
+  place-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  @media #{$xs,$sm,$md} {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media #{$lg} {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+.rock-add-mony-content {
+	text-align: center;
+  .thumb {
+    margin-bottom: 45px;
+  }
+	.title {
+		font-size: 30px;
+		margin-bottom: 14px;
+    color: var(--td-white);
+    @media #{$xs} {
+      font-size: 18px;
+    }
+    @media #{$sm,$md} {
+      font-size: 24px;
+    }
+	} 
+  .description {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .transaction-badge {
+    @include inline-flex();
+		align-items: center;
+		justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--td-white);
+		padding: 10px 20px;
+		background: rgba($color: $white, $alpha: .08);
+		border: 1px solid rgba($color: $white, $alpha: .08);
+		border-radius: 32px;
+	}
+  .btn-inner {
+		margin-top: 40px;
+  }
+}

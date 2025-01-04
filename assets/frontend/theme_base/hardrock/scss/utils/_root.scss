@@ -1,0 +1,61 @@
+:root {
+  // font family declaration
+  --td-ff-body: "JetBrains Mono", monospace;
+  --td-ff-fontawesome: "Font Awesome 6 Pro";
+  --td-ff-icomoon: "icomoon";
+
+  // color declaration
+
+  // Common Color
+  --td-white: hsl(0, 0%, 100%);
+  --td-black: hsl(0, 0%, 0%);
+  --td-placeholder: hsla(0, 0%, 0%, 0.5);
+  --td-selection: hsl(0, 0%, 0%);
+
+  // Heading Color
+  --td-heading: #0E0E11;
+
+  // Theme Color
+  --td-primary: #FFCD10;
+  --td-secondary: #FDD819;
+  --td-tertiary: #F81717;
+
+  // Text Color
+  --td-text-primary: #BDBDC0;
+
+  // Others Color
+  --td-warning: #FFA336;
+  --td-success: #85FFC4;
+  --td-danger: #FF3E3E;
+  --td-green: #80ED99;
+  --td-magenta: #56F5FF;
+  --td-sidecar: #E9D8A6;
+  --td-pinkDiamond: #FFD6FF;
+  --td-kissable: #FF8F77;
+  --td-kittensEye: #86A8FF;
+  --td-seaweed: #FF9211;
+  --td-pureLaughter: #FFF4CC;
+  --td-candleLight: #FDD819;
+
+  //font weight declaration
+  --td-fw-normal: normal;
+  --td-fw-thin: 100;
+  --td-fw-elight: 200;
+  --td-fw-light: 300;
+  --td-fw-regular: 400;
+  --td-fw-medium: 500;
+  --td-fw-sbold: 600;
+  --td-fw-bold: 700;
+  --td-fw-ebold: 800;
+  --td-fw-black: 900;
+
+  // font size declaration
+  --td-fs-body: 16px;
+  --td-fs-p: 16px;
+  --td-fs-h1: 60px;
+  --td-fs-h2: 48px;
+  --td-fs-h3: 38px;
+  --td-fs-h4: 32px;
+  --td-fs-h5: 24px;
+  --td-fs-h6: 20px;
+}
