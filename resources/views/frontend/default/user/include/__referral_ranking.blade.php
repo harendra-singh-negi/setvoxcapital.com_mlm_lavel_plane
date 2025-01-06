@@ -1,8 +1,19 @@
 <div class="row">
+    <div class="col-12">
+   @php
+    $referrer = \App\Models\User::where('id', $user->ref_id)->first();
+@endphp
+</div>
     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
         <div class="user-ranking" @if($user->avatar) style="background: url({{ asset($user->avatar) }});" @endif>
+            <h6 style="font-size:10px;margin:8px 0px">Hi, {{$user->first_name}} {{$user->last_name}}</h6>
             <h4>{{ $user->rank->ranking }}</h4>
             <p>{{ $user->rank->ranking_name }}</p>
+            <h6 style="font-size:10px;margin:8px 0px"> @if($referrer)
+        Sponser: {{ $referrer->first_name }} {{$referrer->last_name}}<!-- Replace with the field you want to display -->
+    @else
+        {{ __('No Sponser Found') }}
+    @endif</h6>
             <div class="rank" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ $user->rank->description }}">
                 <img src="{{ asset( $user->rank->icon) }}" alt="">
             </div>

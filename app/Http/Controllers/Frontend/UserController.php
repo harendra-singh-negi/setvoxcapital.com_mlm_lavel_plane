@@ -119,7 +119,7 @@ class UserController extends Controller
             $sendDescription = 'Main to Profit Wallet Exchanged';
             $txnInfo = Txn::new($amount, $charge, $totalAmount, 'system', $sendDescription,
                 TxnType::Exchange, TxnStatus::Success, null, null, $user->id);
-        } elseif (2 == $input['profit_balance']) {
+        } elseif (2 == $input['from_wallet']) {
             $user->decrement('profit_balance', $totalAmount);
             $user->increment('balance', $amount);
 
